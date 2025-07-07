@@ -1,0 +1,204 @@
+/* Importa uma fonte profissional do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* MELHORIA: Variáveis de Cor para fácil manutenção */
+:root {
+    --cor-principal: #1c1e21;
+    --cor-secundaria: #555;
+    --cor-fundo: #f0f2f5;
+    --cor-branco: #ffffff;
+    --cor-whatsapp: #25D366;
+    --cor-telefone: #34B7F1;
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* MELHORIA: Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos Globais */
+body {
+    /* MELHORIA: Gradiente sutil para um fundo mais moderno */
+    background-image: radial-gradient(circle at top left, #ffffff, #eef0f2);
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-principal);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    /* MELHORIA: Animação de entrada aplicada ao container */
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Cabeçalho com Logo e Perfil */
+header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 200px;
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--cor-branco);
+    box-shadow: var(--sombra-forte);
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.05em;
+    color: var(--cor-secundaria);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Estilos dos Botões */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 16px;
+    margin: 15px 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--sombra-suave);
+    border: 2px solid transparent;
+}
+
+/* MELHORIA: Efeito de hover mais sofisticado */
+.btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--sombra-forte);
+    filter: brightness(1.1);
+}
+
+.btn i {
+    margin-right: 12px;
+    font-size: 1.3em;
+}
+
+.btn-whatsapp { background-color: var(--cor-whatsapp); }
+.btn-phone { background-color: var(--cor-telefone); }
+
+/* Galeria de Imagens */
+.gallery {
+    margin: 40px 0;
+    display: grid;
+    /* MELHORIA: Layout de 2 colunas para as imagens */
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* MELHORIA: Efeito de zoom na imagem da galeria */
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--sombra-forte);
+}
+
+/* Rodapé */
+footer {
+    margin-top: 40px;
+    opacity: 0.8;
+}
+
+.extra-contacts {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.extra-contacts a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.extra-contacts a:hover {
+    color: var(--cor-principal);
+}
+
+.social-icons {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: var(--cor-principal);
+    font-size: 1.9em;
+    margin: 0 12px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-4px) scale(1.1);
+    color: var(--cor-telefone);
+}
+
+.copyright {
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* MELHORIA: Estilos para o Lightbox (para garantir que fique bom com nosso layout) */
+.lightbox .lb-caption {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.lightbox .lb-number {
+    font-size: 0.9em;
+}
+
+/* Media Queries para Telas Maiores (ajustes finos) */
+@media (max-width: 400px) {
+    .gallery {
+        /* Em telas muito pequenas, volta para 1 coluna */
+        grid-template-columns: 1fr;
+    }
+}
